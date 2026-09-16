@@ -84,8 +84,12 @@ def detect(audio, a, b, n):
     if p is not None:
         got = nn_peaks(p, a, b, n - 1)
         if len(got) == n - 1: return got
-    stem = os.path.join(tempfile.gettempdir(), 'cue-clip-' + uuid.uuid4().hex[:8]); clip = stem + '.m4a'; out = stem + '.json'
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(a), '-t', str(b - a), '-i', audio, '-c', 'copy', clip], check=True)
+    stem = os.path.join(tempfile.gettempdir(), 'cue-clip-' + uuid.uuid4().hex[:8]); out = stem + '.json'
+    ext = os.path.splitext(audio)[1].lower()
+    if ext in ('.m4a', '.mp3', '.aac', '.wav', '.flac'):   # stream copy into the same container
+        clip = stem + ext; subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(a), '-t', str(b - a), '-i', audio, '-c', 'copy', clip], check=True)
+    else:                                                    # anything else: transcode the slice
+        clip = stem + '.m4a'; subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(a), '-t', str(b - a), '-i', audio, '-c:a', 'aac', '-b:a', '128k', clip], check=True)
     py = os.path.join(os.path.dirname(HERE), '.venv', 'bin', 'python'); py = py if os.path.exists(py) else sys.executable
     r = subprocess.run([py, os.path.join(HERE, 'segment.py'), clip, '--n', str(n), '--kernel', '60', '--json', out], capture_output=True)
     res = [] if r.returncode else [a + x['start'] for x in json.load(open(out))['boundaries']]
