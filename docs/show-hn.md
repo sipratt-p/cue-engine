@@ -6,7 +6,7 @@
 
 DJ mixes are one long file. If a song you hate comes on you scrub blind; if a song you love comes on you can't find it again. Mixcloud shows tracklists but won't let you skip, because licensing treats the mix as one unit.
 
-Cue is a small iPhone player plus an open-source engine that finds where each song starts inside a mix, so Next on your car stereo jumps to the next song, and double-Next jumps to the next mixtape.
+Cue is an open-source engine plus a small iPhone player (the app isn't public yet; the engine is) that finds where each song starts inside a mix, so Next on your car stereo jumps to the next song, and double-Next jumps to the next mixtape.
 
 How it finds the starts (all measured against DJ-published timestamps, boundaries within 30 s):
 
@@ -19,4 +19,4 @@ Cut-style mixes land at the level of human annotators (about 9 s disagreement). 
 
 Output is a plain m4a with MP4 chapters, so any chapter-aware player can use it. The engine is Python, CPU only, about a minute per hour of audio. The app is SwiftUI and keeps everything on the phone.
 
-Repo: <link>. Happy to talk about what didn't work: LLMs listening to audio placed boundaries no better than a novelty curve and invented titles, and beat-grid snapping did nothing against DJ-typed timestamps.
+Repo: https://github.com/sipratt-p/cue-engine. 30-second demo of the app: https://github.com/sipratt-p/cue-engine/blob/main/docs/media/demo.mp4. Happy to talk about what didn't work: LLMs listening to audio placed boundaries no better than a novelty curve and invented titles, and beat-grid snapping did nothing against DJ-typed timestamps.

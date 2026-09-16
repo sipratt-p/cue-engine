@@ -15,4 +15,4 @@ Cue is a mixtape player. Listeners add your mix and get song-by-song skipping, l
 1. Paste your timestamped tracklist, or let Cue detect the starts and correct the few it gets wrong.
 2. Attach it to your mix page. Listeners who add that mix get your version.
 
-Contact: <email or form>
+Contact: sipratt@gmail.com

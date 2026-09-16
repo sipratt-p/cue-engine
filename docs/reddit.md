@@ -10,7 +10,7 @@ Drop in a mix (SoundCloud download, Mixcloud purchase, whatever you own). It fin
 
 Under the hood: fingerprinting to tell which song is playing, a transition model trained on 170 real mixes to place the exact cut, free preview clips aligned into the mix for songs the fingerprinter misses, and the DJ's published tracklist for naming remixes. On cut-style mixes it's as accurate as a human annotator; on long house blends it's within about half a minute.
 
-The engine is open source and CPU-only, and it writes normal m4a files with chapters, so it works with any chapter-aware player too. iPhone app is in TestFlight.
+The engine is open source and CPU-only (https://github.com/sipratt-p/cue-engine), and it writes normal m4a files with chapters, so it works with any chapter-aware player today. The iPhone app isn't public yet; there's a 30-second demo in the repo. If you'd want to test it, say so.
 
 What would make this useful to you? Which mixes should I test it on?
 

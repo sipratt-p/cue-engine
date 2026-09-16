@@ -1,5 +1,6 @@
 # Draft email to JPOD
 
+To: admin@jpodtbc.com
 Subject: Your mixes with song-level skipping (small app, no strings)
 
 Hi JPOD,
@@ -15,7 +16,8 @@ Two things I'd love from you, both optional:
 
 Nothing about your distribution changes. Cue plays files people already have and never hosts or streams audio.
 
-Here's a 30-second video of it running on Dubs & Daydreams: <link>
+Here's a 30-second video of it running on Dubs & Daydreams: https://github.com/sipratt-p/cue-engine/blob/main/docs/media/demo.mp4
+The engine that finds the song starts is open source: https://github.com/sipratt-p/cue-engine
 
 Thanks for the music,
 Seth
