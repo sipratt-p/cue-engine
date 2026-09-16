@@ -1,0 +1,12 @@
+.venv*/
+__pycache__/
+*.feat.npz
+*.chroma-*.npy
+*.nnprob*.npy
+*.probes.jsonl
+eval/mixes/
+eval/*.m4a
+eval/*.mp3
+eval/*.json
+out/
+docs/media/*-raw.*

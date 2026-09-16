@@ -1,0 +1,7 @@
+librosa>=0.10
+numpy
+scipy
+soundfile
+torch
+# optional providers
+# shazamio        (unofficial Shazam client; personal use only; needs Python <= 3.12)
